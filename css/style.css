@@ -13,6 +13,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: bottom;
 }
 
 ul {
@@ -81,18 +82,19 @@ header {
 
 /* projects */
 
-.projects {
+.projects , .projects a{
     color: white;
 }
-.projects-title {
+.title {
     display: flex;
     justify-content: space-between;
     text-align: center;
     margin-bottom: 60px;
     font-size: 1.75rem;
     align-items: center;
+    color: white;
 }
-.projects-title::before, .projects-title::after{
+.title::before, .title::after{
     content: "";
     border-top: solid 1px;
     width: 28%;
@@ -101,4 +103,72 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.projects li {
+    position: relative;
+}
+
+.projects .project-contents li a::after {
+    position: absolute;
+    box-shadow: 0 -30px 15px -1px #2e2e2e inset;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+}
+.content-name {
+    position: absolute;
+    bottom: 4px;
+    left: 7px;
+    z-index: 5;
+}
+
+/* feature */
+.feature, .feature a{
+    color: white;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* 円 */
+.cicle {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+}
+.cicle a{
+    display: inline-block;
+    border-radius: 50%;
+    border: solid 1px white;
+    color: white;
+    width: 100%;
+    line-height: 15px;
+    padding: calc(50% - 7.5px) 0;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.cicle a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    pointer-events: none;
+}
+.cicle a:hover::after {
+    left: 0;
 }
